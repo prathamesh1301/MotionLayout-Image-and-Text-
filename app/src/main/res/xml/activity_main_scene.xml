@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1500">
+       <KeyFrameSet>
+       </KeyFrameSet>
+        <OnSwipe
+            motion:touchAnchorId="@+id/profile"
+            motion:dragDirection="dragRight"
+            motion:touchAnchorSide="right" />
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@+id/end2"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1500">
+
+        <OnClick
+            motion:targetId="@id/profile" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="596dp" >
+            <CustomAttribute
+                motion:attributeName="saturation"
+                motion:customFloatValue="0"></CustomAttribute>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/textView"
+            android:layout_height="571dp"
+            android:layout_width="405dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customDimension="10sp"></CustomAttribute>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="596dp" >
+            <CustomAttribute
+                motion:attributeName="saturation"
+                motion:customFloatValue="1"></CustomAttribute>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/textView"
+            android:layout_height="610dp"
+            android:layout_width="403dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customDimension="20sp"></CustomAttribute>
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end2">
+        <Constraint
+            android:id="@+id/profile"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            motion:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="10dp"
+            motion:layout_constraintTop_toTopOf="@id/textView"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="40dp" >
+            <CustomAttribute
+                motion:attributeName="saturation"
+                motion:customFloatValue="1"></CustomAttribute>
+        </Constraint>
+
+
+    </ConstraintSet>
+</MotionScene>
